@@ -1,0 +1,60 @@
+#!/usr/bin/python3
+
+def dec_bin(a):
+	a = int(input('Digite um numero: '))
+	l = []
+	z = []
+	while (a > 0):
+                l.append(a%2)
+                a = a/2 
+	for i in range(len(l)-1,-1,-1 ):
+                z.append(l[i])
+        print(z)
+
+	return None
+
+def bin_dec(n):
+	n=str(input("Informe o numero binario que deseja converter para decimal: "))
+	z=[]
+	r=0
+
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
+	for v in range (len(z)-1,-1,-1):
+		if z[v] == '1':
+			r += int(z[v]) * (2**v)
+	print('O valor em decimal e:',r)
+
+	return None
+
+print('Bem vindo ao conversor, escolha uma opcao e tecle enter!')
+a=int(input(' 1 ----- Decimal -> Binario \n 2 ----- Decimal -> Hexadecimal \n 3 ----- Binario -> Decimal \n 4 ----- Binario -> Hexadecimal \n 5 ----- Hexadecimal -> Decimal \n 6 ----- Hexadecimal -> Binario \n Resposta: '))
+l=[]
+x=int
+n=int
+
+if a == 1:
+	r = int()
+	a = int(input('Digite um numero: '))
+	l = []
+	z = []
+	while (a > 0):
+                l.append(a%2)
+                a = a/2 
+	for i in range(len(l)-1,-1,-1 ):
+                z.append(l[i])
+        for v in range (len(z)-1,-1,-1):
+				r += int(z[v]) * (10**v)
+        print(r)
+	
+if a == 3:
+	n=str(input('Informe o numero binario que deseja converter para decimal: '))
+	z=[]
+	r=0
+
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
+	for v in range (len(z)-1,-1,-1):
+		if z[v] == '1':
+			r += int(z[v]) * (2**v)
+	print('O valor em decimal e:',r)
