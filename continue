@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 def dec_bin(a):
+	indice = int()
 	a = int(input('Digite um numero: '))
+	r = int()
 	l = []
 	z = []
 	while (a > 0):
@@ -9,7 +11,10 @@ def dec_bin(a):
                 a = a/2 
 	for i in range(len(l)-1,-1,-1 ):
                 z.append(l[i])
-        print(z)
+        for v in range (len(z)-1,-1,-1):
+				r += int(z[v]) * (10**indice)
+				indice = indice+1
+        print(r)
 
 	return None
 
@@ -34,8 +39,9 @@ x=int
 n=int
 
 if a == 1:
-	r = int()
+	indice = int()
 	a = int(input('Digite um numero: '))
+	r = int()
 	l = []
 	z = []
 	while (a > 0):
@@ -44,9 +50,10 @@ if a == 1:
 	for i in range(len(l)-1,-1,-1 ):
                 z.append(l[i])
         for v in range (len(z)-1,-1,-1):
-				r += int(z[v]) * (10**v)
+				r += int(z[v]) * (10**indice)
+				indice = indice+1
         print(r)
-	
+
 if a == 3:
 	n=str(input('Informe o numero binario que deseja converter para decimal: '))
 	z=[]
