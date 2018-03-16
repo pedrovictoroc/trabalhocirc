@@ -18,6 +18,35 @@ def dec_bin(a):
 
 	return None
 
+def dec_hex(a):
+	a = int(input('diga um numero: '));
+	l = [];
+	z = [];
+	v=['A','B','C','D','E','F']
+
+	validador = bool(1)
+
+	while validador:
+		if a < 16:
+			if a >= 10:
+				l.append(v[a-10])
+			else:
+				l.append(a)
+		
+			validador = bool(0)
+		
+		else:
+			if (a%16) >= 10:
+				l.append(v[(a%16)-10])
+			else:
+				l.append(a%16)
+			a /= 16
+	for i in range(len(l)-1,-1,-1 ):
+		z.append(l[i])
+	print(z)
+	
+	return None
+
 def bin_dec(n):
 	n=str(input("Informe o numero binario que deseja converter para decimal: "))
 	z=[]
@@ -53,6 +82,33 @@ if a == 1:
 				r += int(z[v]) * (10**indice)
 				indice = indice+1
         print(r)
+
+if a == 2:
+	a = int(input('diga um numero: '));
+	l = [];
+	z = [];
+	v=['A','B','C','D','E','F']
+
+	validador = bool(1)
+
+	while validador:
+		if a < 16:
+			if a >= 10:
+				l.append(v[a-10])
+			else:
+				l.append(a)
+		
+			validador = bool(0)
+		
+		else:
+			if (a%16) >= 10:
+				l.append(v[(a%16)-10])
+			else:
+				l.append(a%16)
+			a /= 16
+	for i in range(len(l)-1,-1,-1 ):
+		z.append(l[i])
+	print(z)
 
 if a == 3:
 	n=str(input('Informe o numero binario que deseja converter para decimal: '))
