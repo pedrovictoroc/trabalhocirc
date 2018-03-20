@@ -1,0 +1,123 @@
+#!/usr/bin/python3
+
+def dec_bin(a):
+    indice = int()
+    a = int(input('Digite o numero decimal que deseja converter para binario: '))
+    r = int()
+    l = []
+    z = []
+    while (a > 0):
+                l.append(a%2)
+                a = a/2 
+    for i in range(len(l)-1,-1,-1 ):
+     z.append(l[i])
+    for v in range (len(z)-1,-1,-1):
+          r += int(z[v]) * (10**indice)
+          indice = indice+1
+    print('Esse numero em binario e:', r)
+
+    return None
+
+def dec_hex(a):
+    a = int(input('Diga o numero decimal que deseja converter para hexadecimal: '));
+    l = [];
+    z = [];
+    v=['A','B','C','D','E','F']
+
+    validador = bool(1)
+
+    while validador:
+        if a < 16:
+            if a >= 10:
+                l.append(v[a-10])
+            else:
+                l.append(a)
+        
+            validador = bool(0)
+        
+        else:
+            if (a%16) >= 10:
+                l.append(v[(a%16)-10])
+            else:
+                l.append(a%16)
+            a /= 16
+    for i in range(len(l)-1,-1,-1 ):
+        z.append(l[i])
+    print('Esse numero em hexadecimal e:', z)
+    
+    return None
+
+def bin_dec(n):
+    n=str(input("Informe o numero binario que deseja converter para decimal: "))
+    z=[]
+    r=0
+
+    for i in range (len(n)-1,-1,-1):
+        z.append(n[i])
+    for v in range (len(z)-1,-1,-1):
+        if z[v] == '1':
+            r += int(z[v]) * (2**v)
+    print('O valor em decimal e:',r)
+
+    return None
+
+print('Bem vindo ao conversor, escolha uma opcao e tecle enter!')
+a=int(input(' 1 ----- Decimal -> Binario \n 2 ----- Decimal -> Hexadecimal \n 3 ----- Binario -> Decimal \n 4 ----- Binario -> Hexadecimal \n 5 ----- Hexadecimal -> Decimal \n 6 ----- Hexadecimal -> Binario \n Resposta: '))
+l=[]
+x=int
+n=int
+
+if a == 1:
+    indice = int()
+    a = int(input('Digite o numero decimal que deseja converter para binario: '))
+    r = int()
+    l = []
+    z = []
+    while (a > 0):
+                l.append(a%2)
+                a = a/2 
+    for i in range(len(l)-1,-1,-1 ):
+                z.append(l[i])
+    for v in range (len(z)-1,-1,-1):
+                r += int(z[v]) * (10**indice)
+                indice = indice+1
+    print('Esse numero em binario e:', r)
+
+if a == 2:
+    a = int(input('Diga o numero decimal que deseja converter para hexadecimal: '));
+    l = [];
+    z = [];
+    v=['A','B','C','D','E','F']
+
+    validador = bool(1)
+
+    while validador:
+        if a < 16:
+            if a >= 10:
+                l.append(v[a-10])
+            else:
+                l.append(a)
+        
+            validador = bool(0)
+        
+        else:
+            if (a%16) >= 10:
+                l.append(v[(a%16)-10])
+            else:
+                l.append(a%16)
+            a /= 16
+    for i in range(len(l)-1,-1,-1 ):
+        z.append(l[i])
+    print('Esse numero em hexadecimal e:',z)
+
+if a==3:    	
+    n=str(input('Informe o numero binario que deseja converter para decimal: '))
+    z=[]
+    r=0
+
+    for i in range (len(n)-1,-1,-1):
+        z.append(n[i])
+    for v in range (len(z)-1,-1,-1):
+        if z[v] == '1':
+            r += int(z[v]) * (2**v)
+    print('O valor em decimal e:',r)
