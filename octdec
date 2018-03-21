@@ -1,0 +1,9 @@
+n =str(input('Informe o número octal que deseja converter para decimal: '))
+z= []
+r= 0
+
+for i in range (len(n)-1,-1,-1):
+ z.append(n[i])
+for v in range (len(z)-1,-1,-1):
+ r += int(z[v]) * (8**v)
+print ('O valor em decimal e: ', r)
