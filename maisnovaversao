@@ -142,9 +142,26 @@ if a == 4:
 	print('O valor em decimal e: '+ str(r))
 
 if a == 6:
-	dic = {"A":10, "B":11,"C":12, "D":13, "E":14, "F":15}
-	n=str(input('Informe o numero Hexadecimal que deseja transformar para decimal: '))
-	
+	n = str(input('Informe o numero Hexadecimal que deseja transformar para decimal: '))
+	z = []
+	r = 0
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
+	for v in range (len(z)-1,-1,-1):
+		if z[v] == 'A':
+			z[v] = '10'
+		if z[v] == 'B':
+			z[v] = '11'
+		if z[v] == 'C':
+			z[v] = '12'
+		if z[v] == 'D':
+			z[v] = '13'
+		if z[v] == 'E':
+			z[v] = '14'
+		if z[v] == 'F':
+			z[v] = '15'
+		r += int(z[v]) * (16**v)
+	print('O valor desse numero em decimal e:',r)
 
 if a == 8:
 	n = int(input('Informe o numero octal que deseja transformar em binario: '))
