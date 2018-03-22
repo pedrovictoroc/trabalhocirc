@@ -1,120 +1,7 @@
 #!/usr/bin/python3
 #bin->oct
 #oct->hexa
-"""def dec_bin(a):
-    indice = int()
-    a = int(input('Digite o numero decimal que deseja converter para binario: '))
-	r = int()
-    l = []
-    z = []
-    while (a > 0):
-                l.append(a%2)
-                a = a/2 
-    for i in range(len(l)-1,-1,-1 ):
-     z.append(l[i])
-    for v in range (len(z)-1,-1,-1):
-          r += int(z[v]) * (10**indice)
-          indice = indice+1
-    print('Esse numero em binario e: '+ str(r))
-   return None
-def dec_oct(a):
-	a = int(input('Informe o numero decimal que deseja transformar para octal: '))
-	l = []
-	while(a>0):
-		l.append(str(a%8))
-	s=''.join(l[::-1])
-	print('O valor desse numero em octal e: '+ str(s))
-	
-	return None
-def dec_hex(a):
-    a = int(input('Diga o numero decimal que deseja converter para hexadecimal: '));
-    l = [];
-    z = [];
-    v=['A','B','C','D','E','F']
-    validador = bool(1)
-    while validador:
-        if a < 16:
-            if a >= 10:
-                l.append(v[a-10])
-            else:
-                l.append(a)
-        
-            validador = bool(0)
-        
-        else:
-            if (a%16) >= 10:
-                l.append(v[(a%16)-10])
-            else:
-                l.append(a%
-            a /= 16
-   for i in range(len(l)-1,-1,-1 ):
-        z.append(l[i])
-    print('Esse numero em hexadecimal e:', z)
-    
-    return None
-def bin_dec(n):
-    n=str(input("Informe o numero binario que deseja converter para decimal: "))
-    z=[]
-    r=0
-    for i in range (len(n)-1,-1,-1):
-        z.append(n[i])
-    for v in range (len(z)-1,-1,-1):
-        if z[v] == '1':
-            r += int(z[v]) * (2**v)
-    print('O valor em decimal e:',r)
-    return None
-def hex_dec(n):
-	n = str(input('Informe o numero Hexadecimal que deseja transformar para decimal: '))
-	z = []
-	r = 0
-	for i in range (len(n)-1,-1,-1):
-		z.append(n[i])
-	for v in range (len(z)-1,-1,-1):
-		if z[v] == 'A':
-			z[v] = '10'
-		if z[v] == 'B':
-			z[v] = '11'
-		if z[v] == 'C':
-			z[v] = '12'
-		if z[v] == 'D':
-			z[v] = '13'
-		if z[v] == 'E':
-			z[v] = '14'
-		if z[v] == 'F':
-			z[v] = '15'
-		r += int(z[v]) * (16**v)
-	print('O valor desse numero em decimal e:',r)
-	
-	return None
-def oct_bin(n):
-	n = int(input('Informe o numero octal que deseja transformar em binario: '))
-	indice = int()
-	r = int ()
-	l = []
-	z = []
-	while (n > 0):
-	  l.append(n%2)
-	  n= n / 2
-	for i in range (len(l)-1,-1,-1):
-		z.append(l[i])
-	for v in range (len(z)-1,-1,-1):
-		r += int (z[v]) * (10** indice)
-		indice = indice +1
-	print('Esse numero em binario e: ',r)
-	
-	return None
-def oct_dec():
-	n =str(input('Informe o numero octal que deseja converter para decimal: '))
-	z= []
-	r= 0
-	for i in range (len(n)-1,-1,-1):
-		z.append(n[i])
-	for v in range (len(z)-1,-1,-1):
-		r += int(z[v]) * (8**v)
-	print ('O valor em decimal e: ', r)
-	
-	return None"""
-	
+
 print('Bem vindo ao conversor, escolha uma opcao e tecle enter!')
 a=int(input(' 1 ----- Decimal -> Binario \n 2 ----- Decimal -> Hexadecimal \n 3 ----- Decimal -> Octal \n 4 ----- Binario -> Decimal \n 5 ----- Binario -> Hexadecimal \n 6 ----- Binario -> Octal \n 7 ----- Hexadecimal -> Decimal \n 8 ----- Hexadecimal -> Binario \n 9 ----- Hexadecimal -> Octal \n 10 ----- Octal -> Binario \n 11 ----- Octal -> Decimal \n 12 ----- Octal -> Hexadecimal \n Resposta: '))
 
@@ -139,7 +26,7 @@ if a == 1:
 	print('Esse numero em binario e: '+ str(r))
 
 if a == 2:
-    a = int(input('Diga o numero decimal que deseja converter para hexadecimal: '));
+    a = int(input('Diga o numero decimal que deseja converter para hexadecimal: '))
     l = [];
     z = [];
     v=['A','B','C','D','E','F']
@@ -224,7 +111,22 @@ if a ==5:
 	print('Esse numero em hexadecimal e:',z)
 
 if a == 6:
-
+	n=str(input('Informe o numero binario que deseja converter para octal: '))
+	z=[]
+	r=0
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
+	for v in range (len(z)-1,-1,-1):
+		if z[v] == '1':
+			r += int(z[v]) * (2**v)
+	
+	l = []
+	while(r>0):
+		l.append(str(r%8))
+		r = r//8
+	s=''.join(l[::-1])
+	print('O valor desse numero em octal e: '+ str(s))
+	
 if a ==7:
 	n = str(input('Informe o numero Hexadecimal que deseja transformar para decimal: '))
 	z = []
@@ -343,3 +245,36 @@ if a == 11:
 	for v in range (len(z)-1,-1,-1):
 		r += int(z[v]) * (8**v)
 	print ('O valor em decimal e: ', r)
+
+if a == 12:
+	n =str(input('Informe o numero octal que deseja converter para hexadecimal: '))
+	z = []
+	r = int(0)
+	a = int()
+	l = []
+	z = []
+	v=['A','B','C','D','E','F']
+	validador = bool(1)
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
+	for v in range (len(z)-1,-1,-1):
+		r += int(z[v]) * (8**v)
+
+	while validador:
+		if r < 16:
+			if r >= 10:
+				l.append(v[r-10])
+			else:
+				l.append(r)
+        
+			validador = bool(0)
+        
+		else:
+			if (r%16) >= 10:
+				l.append(v[(r%16)-10])
+			else:
+				l.append(r%16)
+			r = int(r/16)
+	for i in range(len(l)-1,-1,-1 ):
+		z.append(l[i])
+	print('Esse numero em hexadecimal e:',z)
