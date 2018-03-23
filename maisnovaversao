@@ -247,31 +247,35 @@ elif a == 11:
 
 elif a == 12:
 	n =str(input('Informe o numero octal que deseja converter para hexadecimal: '))
-	z = []
-	r = int(0)
-	a = int()
+	r = 0
 	l = []
 	z = []
-	v=['A','B','C','D','E','F']
-	validador = bool(1)
+	a = []
+
 	for i in range (len(n)-1,-1,-1):
 		z.append(n[i])
 	for v in range (len(z)-1,-1,-1):
 		r += int(z[v]) * (8**v)
 
+	validador = bool(1)
+
 	while validador:
+		v = ["A","B","C","D","E","F"]
 		if r < 16:
 			if r >= 10:
-				l.append(v[r-10])
+				aux = v[r-10]
+				l.append(aux)
 			else:
 				l.append(r)
 			validador = bool(0)
+        
 		else:
 			if (r%16) >= 10:
-				l.append(v[(r % 16)-10])
+				l.append(v[(r%16)-10])
 			else:
 				l.append(r%16)
 			r = int(r/16)
+		
 	for i in range(len(l)-1,-1,-1 ):
-		z.append(l[i])
-	print(z)
+		a.append(l[i])
+	print('Esse numero em hexadecimal e:',a)
