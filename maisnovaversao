@@ -136,7 +136,7 @@ elif a == 6:
 	print('O valor desse numero em octal e: '+ str(s))
 	
 elif a ==7:
-	n = str(input('Informe o numero Hexadecimal que deseja transformar para decimal: '))
+	n = str(input('Informe o numero Hexadecimal que deseja transformar para decimal: ')).upper()
 	z = []
 	r = 0
 	for i in range (len(n)-1,-1,-1):
@@ -159,7 +159,7 @@ elif a ==7:
 
 
 elif a == 8:
-	n = str(input('Informe o numero Hexadecimal que deseja transformar para binario: '))
+	n = str(input('Informe o numero Hexadecimal que deseja transformar para binario: ')).upper()
 	z = []
 	a= int()
 	indice = int(0)
@@ -194,7 +194,7 @@ elif a == 8:
 	print('Esse numero em binario e: '+ str(a))
 
 elif a == 9:
-	n = str(input('Informe o numero Hexadecimal que deseja transformar para octal: '))
+	n = str(input('Informe o numero Hexadecimal que deseja transformar para octal: ')).upper()
 	z = []
 	r = 0
 	a = int
@@ -212,7 +212,85 @@ elif a == 9:
 		elif z[v] == 'C':
 			z[v] = '12'
 		elif z[v] == 'D':
-			z[v] = '13'
+			z[v[::-1])
+	print('O valor desse numero em octal e: '+ str(s))
+
+elif a == 10:
+	n = str(input('Informe o numero octal que deseja converter para binario: '))
+	z = []
+	l = []
+	s =[]
+	r = 0
+	indice = int()
+	a = int()
+
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
+	for v in range (len(z)-1,-1,-1):
+		r += int(z[v]) * (8**v)
+
+	while (r > 0):
+		l.append(r%2)
+		r = int(r/2) 
+	for i in range(len(l)-1,-1,-1):
+		s.append(l[i])
+	for v in range (len(s)-1,-1,-1):
+		a += int(s[v]) * (10**indice)
+		indice = indice+1
+	print('Esse numero em binario e: '+ str(a))
+
+elif a == 11:
+	n =str(input('Informe o numero octal que deseja converter para decimal: '))
+	z= []
+	r= 0
+
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
+	for v in range (len(z)-1,-1,-1):
+		r += int(z[v]) * (8**v)
+	print ('O valor em decimal e: ',r)
+
+elif a == 12:
+	n =str(input('Informe o numero octal que deseja converter para hexadecimal: '))
+	r = 0
+	l = []
+	z = []
+	a = []
+
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
+	for v in range (len(z)-1,-1,-1):
+		r += int(z[v]) * (8**v)
+
+	validador = bool(1)
+
+	while validador:
+		v = ["A","B","C","D","E","F"]
+		if r < 16:
+			if r >= 10:
+				aux = v[r-10]
+				l.append(aux)
+			else:
+				l.append(r)
+			validador = bool(0)
+        
+		else:
+			if (r%16) >= 10:
+				l.append(v[(r%16)-10])
+			else:
+				l.append(r%16)
+			r = int(r/16)
+		
+	for i in range(len(l)-1,-1,-1):
+		a.append(l[i])
+	for v in range (len(a)-1,-1,-1):
+		a[v] = str(a[v])
+	s=''.join(a[::])
+	print('Esse numero em hexadecimal e: ',s)
+
+else:
+	print('Essa opcao nao esta disponivel, por favor selecione uma opcao valida!!!')
+] = '13'
 		elif z[v] == 'E':
 			z[v] = '14'
 		elif z[v] == 'F':
@@ -300,3 +378,4 @@ elif a == 12:
 
 else:
 	print('Essa opcao nao esta disponivel, por favor selecione uma opcao valida!!!')
+
