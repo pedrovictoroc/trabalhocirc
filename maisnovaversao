@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-#Pedro Victor Oliveira Carvalho / 417338
-#Pedro Lucas
-#Antonio Levy
+#executar com python3 "nome do arquivo".py
+#Pedro Victor Oliveira Carvalho / numero: 417338
+#Pedro Lucas Nascmento Pinto / numero: 412692
+#Antonio Levy Melo Nogueira / numero: 413230
 
 print('Bem vindo ao conversor, escolha uma opcao e tecle enter!')
 a=int(input(' 1 ----- Decimal -> Binario \n 2 ----- Decimal -> Hexadecimal \n 3 ----- Decimal -> Octal \n 4 ----- Binario -> Decimal \n 5 ----- Binario -> Hexadecimal \n 6 ----- Binario -> Octal \n 7 ----- Hexadecimal -> Decimal \n 8 ----- Hexadecimal -> Binario \n 9 ----- Hexadecimal -> Octal \n 10 ----- Octal -> Binario \n 11 ----- Octal -> Decimal \n 12 ----- Octal -> Hexadecimal \n Resposta: '))
