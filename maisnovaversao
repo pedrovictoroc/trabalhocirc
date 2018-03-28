@@ -28,32 +28,34 @@ if a == 1:
 	print('Esse numero em binario e: '+ str(r))
 
 elif a == 2:
-    a = int(input('Diga o numero decimal que deseja converter para hexadecimal: '))
-    l = []
-    z = []
-    v=['A','B','C','D','E','F']
+	a = int(input('Diga o numero decimal que deseja converter para hexadecimal: '))
+	l = []
+	z = []
+	v=['A','B','C','D','E','F']
 
-    validador = bool(1)
+	validador = bool(1)
 
-    while validador:
-        if a < 16:
-            if a >= 10:
-                l.append(v[a-10])
-            else:
-                l.append(a)
+	while validador:
+		if a < 16:
+			if a >= 10:
+				l.append(v[a-10])
+			else:
+				l.append(a)
         
-            validador = bool(0)
+			validador = bool(0)
         
-        else:
-            if (a%16) >= 10:
-                l.append(v[(a%16)-10])
-            else:
-                l.append(a%16)
-            a = int(a/16)
-    for i in range(len(l)-1,-1,-1 ):
-        z.append(l[i])
-    s=''.join(z[::-1])
-    print('Esse numero em hexadecimal e:',s)
+		else:
+			if (a%16) >= 10:
+				l.append(v[(a%16)-10])
+			else:
+				l.append(a%16)
+			a = int(a/16)
+	for i in range(len(l)-1,-1,-1):
+		z.append(l[i])
+	for v in range (len(z)-1,-1,-1):
+ 		z[v] = str(z[v])
+	s=''.join(z[::])
+	print('Esse numero em hexadecimal e:',s)
 
 elif a == 3:
 	a = int(input('Informe o numero decimal que deseja transformar para octal: '))
@@ -75,7 +77,7 @@ elif a == 4:
 			r += int(z[v]) * (2**v)
 	print('O valor em decimal e: '+ str(r))
 
-elif a ==5:
+elif a == 5:
 	n=str(input('Informe o numero binario que deseja converter para hexadecimal: '))
 	z=[]
 	r=0
@@ -109,9 +111,11 @@ elif a ==5:
 			else:
 				l.append(r%16)
 			r = int(r/16)
-	for i in range(len(l)-1,-1,-1 ):
+	for i in range(len(l)-1,-1,-1):
 		z.append(l[i])
-	s=''.join(z[::-1])
+	for v in range (len(z)-1,-1,-1):
+		z[v] = str(z[v])
+	s=''.join(z[::])
 	print('Esse numero em hexadecimal e:',s)
 
 elif a == 6:
@@ -222,22 +226,28 @@ elif a == 9:
 	print('O valor desse numero em octal e: '+ str(s))
 
 elif a == 10:
-	n = int(input('Informe o numero octal que deseja transformar em binario: '))
-	indice = int()
-	r = int ()
-	l = []
+	n = str(input('Informe o numero octal que deseja converter para binario: '))
 	z = []
+	l = []
+	s =[]
+	r = 0
+	indice = int()
+	a = int()
 
-	while (n > 0):
-	  l.append(n%2)
-	  n= n / 2
-	for i in range (len(l)-1,-1,-1):
-		z.append(l[i])
-
+	for i in range (len(n)-1,-1,-1):
+		z.append(n[i])
 	for v in range (len(z)-1,-1,-1):
-		r += int (z[v]) * (10** indice)
-		indice = indice +1
-	print('Esse numero em binario e: ',r)
+		r += int(z[v]) * (8**v)
+
+	while (r > 0):
+		l.append(r%2)
+		r = int(r/2) 
+	for i in range(len(l)-1,-1,-1):
+		s.append(l[i])
+	for v in range (len(s)-1,-1,-1):
+		a += int(s[v]) * (10**indice)
+		indice = indice+1
+	print('Esse numero em binario e: '+ str(a))
 
 elif a == 11:
 	n =str(input('Informe o numero octal que deseja converter para decimal: '))
@@ -283,7 +293,10 @@ elif a == 12:
 		
 	for i in range(len(l)-1,-1,-1):
 		a.append(l[i])
-	print('Esse numero em hexadecimal e: ',a)
+	for v in range (len(a)-1,-1,-1):
+		a[v] = str(a[v])
+	s=''.join(a[::])
+	print('Esse numero em hexadecimal e: ',s)
 
 else:
 	print('Essa opcao nao esta disponivel, por favor selecione uma opcao valida!!!')
