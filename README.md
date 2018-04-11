@@ -4,9 +4,9 @@ Codigo de conversão entre bases
 
 Bases disponiveis:
 
--Octal
--Binario
--Decimal
+-Octal \n
+-Binario \n
+-Decimal \n
 -Hexadecimal
 
 
